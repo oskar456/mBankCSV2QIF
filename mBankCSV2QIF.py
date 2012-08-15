@@ -16,9 +16,8 @@ def mBankCSVtoCSV(file):
 	"""
 	datare = re.compile(r'[0-3][0-9]-[01][0-9]-20[0-9][0-9]');
 	for line in file:
-		if not datare.match(line):
-			continue;
-		yield line;
+		if datare.match(line):
+			yield line;
 
 
 class QifItem(dict):
